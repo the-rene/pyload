@@ -29,15 +29,15 @@ class PremiumTo(MultiAccount):
 
     LOGIN_FAILED_PATTERN = r"wrong username"
 
-    API_URL = "http://api.premium.to/api/"
+    API_URL = "http://api.premium.to/api/2/"
 
     def api_response(self, method, user, password):
         return self.load(
-            self.API_URL + method + ".php", get={"username": user, "password": password}
+            self.API_URL + method + ".php", get={"userid": user, "apikey": password}
         )
 
     def grab_hosters(self, user, password, data):
-        html = self.api_response("hosters", user, password)
+        html = self.api_response("hosts", user, password)
         return (
             [x.strip() for x in html.replace('"', "").split(";") if x]
             if self.req.code == 200
@@ -45,7 +45,7 @@ class PremiumTo(MultiAccount):
         )
 
     def grab_info(self, user, password, data):
-        traffic = self.api_response("straffic", user, password)
+        traffic = self.api_response("traffic", user, password)
 
         if self.req.code == 200:
             # TODO: Remove `>> 10` in 0.6.x
