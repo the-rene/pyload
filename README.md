@@ -27,7 +27,7 @@
 
 pyLoad Next is developed in the [main branch on GitHub](https://github.com/pyload/pyload/tree/main) and published as [pyload-ng on PyPI](https://pypi.org/project/pyload-ng/).
 
-The old version of pyLoad working on Python 2 only resides in the [stable branch on GitHub](https://github.com/pyload/pyload/tree/stable) and keeps getting plugin updates.
+The old version of pyLoad for Python 2 resides in the [stable branch on GitHub](https://github.com/pyload/pyload/tree/stable) and keeps getting plugin updates.
 
 ## Quick Start
 
